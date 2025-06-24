@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Crash Game</title>
+  <script>
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(ua)) {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.yourgame.android";
+    } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+      window.location.href = "https://apps.apple.com/app/idYOUR_APP_ID";
+    } else {
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.innerHTML = "<h3>Please open this link on your phone to download the Crash game.</h3>";
+      });
+    }
+  </script>
+</head>
+<body></body>
+</html>
